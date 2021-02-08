@@ -1,0 +1,23 @@
+{
+  "name": "svg-animation",
+  "version": "1.0.0",
+  "description": "An exercise about svg animations (using gsap)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "svg",
+    "animation",
+    "gsap",
+    "greensocket",
+    "javascript",
+    "css"
+  ],
+  "author": "APedroDev",
+  "license": "ISC",
+  "dependencies": {
+    "gsap": "^3.6.0",
+    "node-sass": "^5.0.0"
+  }
+}
