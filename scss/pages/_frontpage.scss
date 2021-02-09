@@ -1,0 +1,23 @@
+body {
+  background: $orange;
+  font-family: "QuickSand", sans-serif;
+  font-size: 1rem;
+
+  h1 {
+    @include style-font(h1);
+  }
+
+  h2 {
+    @include style-font(h2);
+  }
+
+  h3 {
+    @include style-font(h3);
+  }
+
+  p,
+  span,
+  figcaption {
+    @include style-font(p);
+  }
+}

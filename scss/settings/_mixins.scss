@@ -1,0 +1,21 @@
+@mixin style-font($tag) {
+  //Global properties
+  color: $blue;
+
+  @if $tag == h1 {
+    //h1 properties
+    font-size: 2.5em;
+    font-weight: 700;
+  } @else if $tag == h2 {
+    //h2 properties
+    font-size: 2em;
+    font-weight: 700;
+  } @else if ($tag == h3 or $tag == h4 or $tag == h5) {
+    //h3, h4, h5 properties
+    font-size: 1.5em;
+    font-weight: 500;
+  } @else {
+    //Other cases
+    font-size: 1.2em;
+  }
+}

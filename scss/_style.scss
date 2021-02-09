@@ -1,3 +1,14 @@
-body {
-  display: block;
-}
+// Importing reset css
+@import "settings/reset";
+
+// Importing colors
+@import "settings/colors";
+
+// Importing fonts
+@import "settings/fonts";
+
+// Importing mixins
+@import "settings/mixins";
+
+// Import Front Page
+@import "pages/frontpage";
