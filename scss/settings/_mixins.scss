@@ -23,7 +23,7 @@
 
 @mixin padding($size) {
   @if $size == "small" {
-    padding: 10px;
+    padding: 20px;
   } @else if $size == "normal" {
     padding: 40px;
   }
