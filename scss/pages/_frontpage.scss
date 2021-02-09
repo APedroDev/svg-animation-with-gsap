@@ -1,8 +1,8 @@
 body {
-  background: $orange;
-  font-family: "QuickSand", sans-serif;
+  background: $grey;
+  font-family: "Work Sans", sans-serif;
   font-size: 1rem;
-  padding: 40px;
+  @include padding("normal");
 
   h1 {
     @include style-font(h1);
@@ -28,6 +28,23 @@ body {
 
     header#header {
       margin-bottom: 40px;
+    }
+
+    main#main {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+
+      figure {
+        display: flex;
+        justify-content: center;
+        flex-grow: 1;
+        border-radius: 7px;
+        background: $cream;
+        min-width: 200px;
+        margin: 10px;
+        @include padding("small");
+      }
     }
   }
 }

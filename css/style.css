@@ -2,7 +2,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&display=swap");
 * {
   box-sizing: border-box; }
 
@@ -131,8 +131,8 @@ table {
   border-spacing: 0; }
 
 body {
-  background: #f2a154;
-  font-family: "QuickSand", sans-serif;
+  background: #e7e6e1;
+  font-family: "Work Sans", sans-serif;
   font-size: 1rem;
   padding: 40px; }
   body h1 {
@@ -157,5 +157,18 @@ body {
     margin: 0 auto; }
     body div#main-container header#header {
       margin-bottom: 40px; }
+    body div#main-container main#main {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap; }
+      body div#main-container main#main figure {
+        display: flex;
+        justify-content: center;
+        flex-grow: 1;
+        border-radius: 7px;
+        background: #f7f6e7;
+        min-width: 200px;
+        margin: 10px;
+        padding: 10px; }
 
 /*# sourceMappingURL=style.css.map */
