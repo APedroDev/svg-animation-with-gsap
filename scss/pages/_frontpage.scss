@@ -2,6 +2,7 @@ body {
   background: $orange;
   font-family: "QuickSand", sans-serif;
   font-size: 1rem;
+  padding: 40px;
 
   h1 {
     @include style-font(h1);
@@ -19,5 +20,14 @@ body {
   span,
   figcaption {
     @include style-font(p);
+  }
+
+  div#main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    header#header {
+      margin-bottom: 40px;
+    }
   }
 }
