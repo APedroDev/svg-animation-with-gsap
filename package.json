@@ -4,7 +4,8 @@
   "description": "An exercise about svg animations (using gsap)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "http-server ."
   },
   "keywords": [
     "svg",
@@ -19,5 +20,10 @@
   "dependencies": {
     "gsap": "^3.6.0",
     "node-sass": "^5.0.0"
+  },
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "http-server": "^0.12.3",
+    "webpack": "^5.21.2"
   }
 }
