@@ -131,26 +131,26 @@ table {
   border-spacing: 0; }
 
 body {
-  background: #e7e6e1;
+  background: #314e52;
   font-family: "Work Sans", sans-serif;
   font-size: 1rem;
   padding: 40px; }
   body h1 {
-    color: #314e52;
+    color: #f2a154;
     font-size: 2.5em;
     font-weight: 700; }
   body h2 {
-    color: #314e52;
+    color: #f2a154;
     font-size: 2em;
     font-weight: 700; }
   body h3 {
-    color: #314e52;
+    color: #f2a154;
     font-size: 1.5em;
     font-weight: 500; }
   body p,
   body span,
   body figcaption {
-    color: #314e52;
+    color: #f2a154;
     font-size: 1.2em; }
   body div#main-container {
     max-width: 1200px;
@@ -168,7 +168,7 @@ body {
         justify-content: center;
         flex-grow: 1;
         border-radius: 7px;
-        background: #f7f6e7;
+        background: #3b5d62;
         min-width: 200px;
         margin: 10px;
         padding: 20px; }

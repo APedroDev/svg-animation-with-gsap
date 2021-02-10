@@ -1,5 +1,5 @@
 body {
-  background: $grey;
+  background: $blue;
   font-family: "Work Sans", sans-serif;
   font-size: 1rem;
   @include padding("normal");
@@ -42,7 +42,7 @@ body {
         justify-content: center;
         flex-grow: 1;
         border-radius: 7px;
-        background: $cream;
+        background: lighten($color: $blue, $amount: 5);
         min-width: 200px;
         margin: 10px;
         @include padding("small");
