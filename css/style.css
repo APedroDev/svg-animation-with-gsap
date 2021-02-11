@@ -170,11 +170,13 @@ body {
         border-radius: 7px;
         background: #3b5d62;
         min-width: 200px;
-        min-height: 200px;
+        height: 200px;
         margin: 10px;
         overflow: hidden; }
         body div#main-container main#main figure img {
-          width: 100%; }
+          height: 102%;
+          object-fit: cover;
+          object-position: center; }
         body div#main-container main#main figure figcaption {
           margin-top: 20px; }
 
