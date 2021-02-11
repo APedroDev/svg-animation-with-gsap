@@ -40,12 +40,17 @@ body {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        flex-grow: 1;
+        flex: 0 0 30%;
         border-radius: 7px;
         background: lighten($color: $blue, $amount: 5);
         min-width: 200px;
+        min-height: 200px;
         margin: 10px;
-        @include padding("small");
+        overflow: hidden;
+
+        img {
+          width: 100%;
+        }
 
         figcaption {
           margin-top: 20px;
