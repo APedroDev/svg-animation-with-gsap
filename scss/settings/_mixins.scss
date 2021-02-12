@@ -1,7 +1,7 @@
 // Style some font and color properties depending on tag
 @mixin style-font($tag) {
   //Global properties
-  color: $orange;
+  color: $blue;
 
   @if $tag == h1 {
     //h1 properties

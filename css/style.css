@@ -131,26 +131,25 @@ table {
   border-spacing: 0; }
 
 body {
-  background: #314e52;
   font-family: "Work Sans", sans-serif;
   font-size: 1rem;
   padding: 40px; }
   body h1 {
-    color: #f2a154;
+    color: #314e52;
     font-size: 2.5em;
     font-weight: 700; }
   body h2 {
-    color: #f2a154;
+    color: #314e52;
     font-size: 2em;
     font-weight: 700; }
   body h3 {
-    color: #f2a154;
+    color: #314e52;
     font-size: 1.5em;
     font-weight: 500; }
   body p,
   body span,
   body figcaption {
-    color: #f2a154;
+    color: #314e52;
     font-size: 1.2em; }
   body div#main-container {
     max-width: 1200px;
@@ -168,7 +167,6 @@ body {
         justify-content: center;
         flex: 0 0 30%;
         border-radius: 7px;
-        background: #3b5d62;
         min-width: 200px;
         height: 200px;
         margin: 10px;

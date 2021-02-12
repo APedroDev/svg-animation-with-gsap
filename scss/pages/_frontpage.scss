@@ -1,5 +1,4 @@
 body {
-  background: $blue;
   font-family: "Work Sans", sans-serif;
   font-size: 1rem;
   @include padding("normal");
@@ -42,7 +41,6 @@ body {
         justify-content: center;
         flex: 0 0 30%;
         border-radius: 7px;
-        background: lighten($color: $blue, $amount: 5);
         min-width: 200px;
         height: 200px;
         margin: 10px;
