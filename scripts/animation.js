@@ -3,7 +3,8 @@ import {gsap} from "../node_modules/gsap/index.js";
 
 document.addEventListener('DOMContentLoaded', function domLoaded() {
 
-    const codeDisplayContainers = document.querySelectorAll('.code-display');
+    const showCodeBtns = document.querySelectorAll('.show-code');
+    const sidebar = document.querySelector('#sidebar');
 
     const starAnimation = TweenMax.fromTo(
         '#star',
@@ -57,7 +58,9 @@ document.addEventListener('DOMContentLoaded', function domLoaded() {
             }
         );
     
-        TweenMax.set(labWindSvg, {strokeDasharray: labWindSvg.getTotalLength()});
+        TweenMax.set(labWindSvg, {
+            strokeDasharray: labWindSvg.getTotalLength()
+        });
 
         let labWindAnimation = TweenMax.fromTo(
             labWindSvg,
@@ -94,11 +97,18 @@ document.addEventListener('DOMContentLoaded', function domLoaded() {
         }
     }
 
-    codeDisplayContainers.forEach(function displayCode(container) {
+    showCodeBtns.forEach(function addListener(btn) {
+        btn.addEventListener('click', function displayModal(event) {
+            sidebar.classList.remove('close');
+            sidebar.classList.add('open');
 
-        // let codeTagNode = document.createElement("code");
+            const codeNode = document.querySelector('#sidebar pre code');
+            const h1Node = document.querySelector('#sidebar h1');
 
-        container.innerHTML = "<pre><code>"+writeCode(container.parentElement.classList)+'</pre></code>';
+            codeNode.innerHTML = writeCode(btn.parentElement.classList);
+            h1Node.innerText = 'Let\'s fly away';
+
+        });
     });
 
     animateLab();

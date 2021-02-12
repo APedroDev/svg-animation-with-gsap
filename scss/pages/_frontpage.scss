@@ -21,6 +21,15 @@ body {
     @include style-font(p);
   }
 
+  pre {
+    font-family: "Source Code Pro", monospace;
+    font-size: 13px;
+    white-space: pre-wrap;
+    line-height: 1.4em;
+    background-color: darken($color: $blue, $amount: 2);
+    @include padding("xsmall");
+  }
+
   div#main-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -48,8 +57,12 @@ body {
         position: relative;
 
         &:hover {
-          div.code-display {
-            right: 0;
+          // div.code-display {
+          //   right: 0;
+          // }
+
+          button {
+            bottom: 10px;
           }
         }
 
@@ -72,9 +85,50 @@ body {
           object-position: center;
         }
 
-        figcaption {
-          margin-top: 20px;
+        @import "../components/button";
+
+        button {
+          position: absolute;
+          bottom: -40px;
         }
+      }
+    }
+
+    aside#sidebar.sidebar {
+      $width: 47%;
+
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100vh;
+      max-width: $width;
+      background-color: $blue;
+      overflow: scroll;
+      color: $white;
+      z-index: 999;
+      transition: all 0.2s ease;
+
+      h1 {
+        color: $white;
+        margin-bottom: 20px;
+      }
+
+      &.open::after {
+        content: "";
+        display: table;
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: -1;
+        background: rgba($color: $blue, $alpha: 0.7);
+      }
+
+      @include padding("small");
+
+      &.close {
+        right: -$width;
       }
     }
   }

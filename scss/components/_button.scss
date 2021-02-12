@@ -1,0 +1,9 @@
+button {
+  background-color: $blue;
+  @include padding("xsmall");
+  color: $white;
+  transition: all 0.3s ease;
+  border-radius: 7px;
+  cursor: pointer;
+  font-size: inherit;
+}

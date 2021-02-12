@@ -26,5 +26,7 @@
     padding: 20px;
   } @else if $size == "normal" {
     padding: 40px;
+  } @else if $size == "xsmall" {
+    padding: 15px;
   }
 }
