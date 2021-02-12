@@ -1,10 +1,9 @@
-//problem with module path
 import { Linear, Power3, TweenMax, Expo, Power4 } from "../node_modules/gsap/gsap-core.js"
 import {gsap} from "../node_modules/gsap/index.js";
 
 document.addEventListener('DOMContentLoaded', function domLoaded() {
 
-    const windSvg = document.querySelector('#lab_wind');
+    const codeDisplayContainers = document.querySelectorAll('.code-display');
 
     const starAnimation = TweenMax.fromTo(
         '#star',
@@ -24,53 +23,84 @@ document.addEventListener('DOMContentLoaded', function domLoaded() {
         }
     );
 
-    const labCloudsAnimation = TweenMax.fromTo(
-        '#lab_clouds',
-        35,
-        {
-            x: -1500
-        },
-        {
-            x: 1500,
-            ease: Linear.easeNone,
-            repeat: -1
-        }
-    );
+    function animateLab() {
 
-    const labAirBalloonAnimation = TweenMax.fromTo(
-        '#lab_hot-air-balloon',
-        12,
-        {
-            x: -950,
-            rotation: 20
-        },
-        {
-            x: 1500,
-            rotation: -20,
-            ease: Power4.easeIn,
-            repeat: -1
-        }
-    );
+        const labCloudsSvg = document.querySelector('#lab_clouds');
+        const labAirBalloonSvg = document.querySelector('#lab_hot-air-balloon');
+        const labWindSvg = document.querySelector('#lab_wind');
 
-    TweenMax.set(windSvg, {strokeDasharray: windSvg.getTotalLength()});
-    const labWindAnimation = TweenMax.fromTo(
-        windSvg,
-        1.5,
-        {
-            strokeDashoffset: windSvg.getTotalLength(),
-            y: 200,
-            x: 100,
-            opacity: 1
-        },
-        {
-            strokeDashoffset: 0,
-            ease: Power3.easeOut,
-            repeat: -1,
-            repeatDelay: 10.5,
-            opacity: 0
+        let labCloudsAnimation = TweenMax.fromTo(
+            labCloudsSvg,
+            35,
+            {
+                x: -1500
+            },
+            {
+                x: 1500,
+                ease: Linear.easeNone,
+                repeat: -1
+            }
+        );
+    
+        let labAirBalloonAnimation = TweenMax.fromTo(
+            labAirBalloonSvg,
+            12,
+            {
+                x: -950,
+                rotation: 20
+            },
+            {
+                x: 1500,
+                rotation: -20,
+                ease: Power4.easeIn,
+                repeat: -1
+            }
+        );
+    
+        TweenMax.set(labWindSvg, {strokeDasharray: labWindSvg.getTotalLength()});
+
+        let labWindAnimation = TweenMax.fromTo(
+            labWindSvg,
+            1.5,
+            {
+                strokeDashoffset: labWindSvg.getTotalLength(),
+                y: 200,
+                x: 100,
+                opacity: 1
+            },
+            {
+                strokeDashoffset: 0,
+                ease: Power3.easeOut,
+                repeat: -1,
+                repeatDelay: 10.5,
+                opacity: 0
+            }
+        );
+
+        labCloudsAnimation.progress(0.5);
+        labAirBalloonAnimation.progress(0.82);
+    }
+
+    function writeCode(parentClassList) {
+
+        let parentClassListArr = Array.from(parentClassList);
+
+        switch (parentClassListArr[1]) {
+            case ('lab'):
+                return animateLab;
+                break;
+            default:
+                return 'function() {}';
         }
-    );
-    labCloudsAnimation.progress(0.5);
-    labAirBalloonAnimation.progress(0.82);
+    }
+
+    codeDisplayContainers.forEach(function displayCode(container) {
+
+        // let codeTagNode = document.createElement("code");
+
+        container.innerHTML = "<pre><code>"+writeCode(container.parentElement.classList)+'</pre></code>';
+    });
+
+    animateLab();
     
 });

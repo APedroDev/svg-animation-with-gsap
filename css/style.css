@@ -170,7 +170,21 @@ body {
         min-width: 200px;
         height: 200px;
         margin: 10px;
-        overflow: hidden; }
+        overflow: hidden;
+        position: relative; }
+        body div#main-container main#main figure:hover div.code-display {
+          right: 0; }
+        body div#main-container main#main figure div.code-display {
+          position: absolute;
+          padding: 20px;
+          overflow: scroll;
+          right: 100%;
+          top: 0;
+          transition: all 0.5s ease;
+          background-color: #314e52;
+          width: 100%;
+          height: 100%;
+          color: #ffffff; }
         body div#main-container main#main figure img {
           height: 102%;
           object-fit: cover;
