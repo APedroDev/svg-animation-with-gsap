@@ -1,10 +1,13 @@
-import { Linear, Power3, TweenMax, Expo, Power4 } from "../node_modules/gsap/gsap-core.js"
+import { Linear, Power3, TweenMax, Expo, Power4 } from "../node_modules/gsap/gsap-core.js";
 import {gsap} from "../node_modules/gsap/index.js";
+import {
+    SIDEBAR, 
+    SHOWCODEBTNS,
+    SIDEBAR_GETBACK
+} from './constants.js';
+import setSidebar from './components/Sidebar/setSidebar.js';
 
 document.addEventListener('DOMContentLoaded', function domLoaded() {
-
-    const showCodeBtns = document.querySelectorAll('.show-code');
-    const sidebar = document.querySelector('#sidebar');
 
     const starAnimation = TweenMax.fromTo(
         '#star',
@@ -84,32 +87,36 @@ document.addEventListener('DOMContentLoaded', function domLoaded() {
         labAirBalloonAnimation.progress(0.82);
     }
 
-    function writeCode(parentClassList) {
+    function fillSidebarText(parentClassList) {
 
         let parentClassListArr = Array.from(parentClassList);
 
         switch (parentClassListArr[1]) {
             case ('lab'):
-                return animateLab;
+                return {
+                    func: animateLab,
+                    title: 'Let\'s fly away'
+                };
                 break;
             default:
                 return 'function() {}';
         }
     }
 
-    showCodeBtns.forEach(function addListener(btn) {
-        btn.addEventListener('click', function displayModal(event) {
-            sidebar.classList.remove('close');
-            sidebar.classList.add('open');
+    SHOWCODEBTNS.forEach(function addListener(btn) {
+        btn.addEventListener('click', function toggleModal() {
 
-            const codeNode = document.querySelector('#sidebar pre code');
-            const h1Node = document.querySelector('#sidebar h1');
+            let sidebarCodeText = fillSidebarText(btn.parentElement.classList).func;
+            let sidebarTitle = fillSidebarText(btn.parentElement.classList).title;
 
-            codeNode.innerHTML = writeCode(btn.parentElement.classList);
-            h1Node.innerText = 'Let\'s fly away';
+            setSidebar('on',sidebarCodeText,sidebarTitle);
 
         });
     });
+
+    SIDEBAR_GETBACK.addEventListener('click', function closeSidebar() {
+        setSidebar('off');
+    })
 
     animateLab();
     

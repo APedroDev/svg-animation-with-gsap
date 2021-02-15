@@ -152,6 +152,9 @@ body {
   body figcaption {
     color: #314e52;
     font-size: 1.2em; }
+  body a {
+    color: #ffffff;
+    font-size: 0.7em; }
   body pre {
     font-family: "Source Code Pro", monospace;
     font-size: 13px;
@@ -222,7 +225,7 @@ body {
       padding: 20px; }
       body div#main-container aside#sidebar.sidebar h1 {
         color: #ffffff;
-        margin-bottom: 20px; }
+        margin: 10px 0px 20px 0px; }
       body div#main-container aside#sidebar.sidebar.open::after {
         content: "";
         display: table;
