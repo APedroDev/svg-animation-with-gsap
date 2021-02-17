@@ -171,7 +171,7 @@ body {
       display: flex;
       justify-content: space-around;
       flex-wrap: wrap; }
-      body div#main-container main#main figure {
+      body div#main-container main#main figure.animation-container {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -182,10 +182,13 @@ body {
         height: 200px;
         margin: 10px;
         overflow: hidden;
-        position: relative; }
-        body div#main-container main#main figure:hover button {
-          bottom: 10px; }
-        body div#main-container main#main figure div.code-display {
+        position: relative;
+        transition: all 0.3s ease; }
+        body div#main-container main#main figure.animation-container:hover {
+          box-shadow: 0px 0px 30px #dbdbdb; }
+          body div#main-container main#main figure.animation-container:hover button {
+            bottom: 10px; }
+        body div#main-container main#main figure.animation-container div.code-display {
           position: absolute;
           padding: 20px;
           overflow: scroll;
@@ -195,12 +198,13 @@ body {
           background-color: #314e52;
           width: 100%;
           height: 100%;
-          color: #ffffff; }
-        body div#main-container main#main figure img {
+          color: #ffffff;
+          }
+        body div#main-container main#main figure.animation-container img {
           height: 102%;
           object-fit: cover;
           object-position: center; }
-        body div#main-container main#main figure button {
+        body div#main-container main#main figure.animation-container button {
           background-color: #314e52;
           padding: 15px;
           color: #ffffff;
@@ -208,7 +212,7 @@ body {
           border-radius: 7px;
           cursor: pointer;
           font-size: inherit; }
-        body div#main-container main#main figure button {
+        body div#main-container main#main figure.animation-container button {
           position: absolute;
           bottom: -40px; }
     body div#main-container aside#sidebar.sidebar {
