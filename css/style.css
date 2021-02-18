@@ -138,7 +138,8 @@ body {
   body h1 {
     color: #314e52;
     font-size: 2.5em;
-    font-weight: 700; }
+    font-weight: 700;
+    margin: 10px 0px 20px 0px; }
   body h2 {
     color: #314e52;
     font-size: 2em;
@@ -151,10 +152,7 @@ body {
   body span,
   body figcaption {
     color: #314e52;
-    font-size: 1.2em; }
-  body a {
-    color: #ffffff;
-    font-size: 0.7em; }
+    font-size: 1em; }
   body pre {
     font-family: "Source Code Pro", monospace;
     font-size: 13px;
@@ -172,15 +170,7 @@ body {
       justify-content: space-around;
       flex-wrap: wrap; }
       body div#main-container main#main figure.animation-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        flex: 0 0 30%;
         border-radius: 7px;
-        min-width: 200px;
-        height: 200px;
-        margin: 10px;
         overflow: hidden;
         position: relative;
         transition: all 0.3s ease; }
@@ -198,8 +188,7 @@ body {
           background-color: #314e52;
           width: 100%;
           height: 100%;
-          color: #ffffff;
-          }
+          color: #ffffff; }
         body div#main-container main#main figure.animation-container img {
           height: 102%;
           object-fit: cover;
@@ -215,6 +204,17 @@ body {
         body div#main-container main#main figure.animation-container button {
           position: absolute;
           bottom: -40px; }
+      body div#main-container main#main .box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        flex: 1 1 30%;
+        min-width: 250px;
+        height: 200px;
+        margin: 10px; }
+      body div#main-container main#main span.credits {
+        font-size: 0.7em; }
     body div#main-container aside#sidebar.sidebar {
       position: absolute;
       top: 0;
@@ -228,8 +228,10 @@ body {
       transition: all 0.2s ease;
       padding: 20px; }
       body div#main-container aside#sidebar.sidebar h1 {
+        color: #ffffff; }
+      body div#main-container aside#sidebar.sidebar a {
         color: #ffffff;
-        margin: 10px 0px 20px 0px; }
+        font-size: 0.7em; }
       body div#main-container aside#sidebar.sidebar.open::after {
         content: "";
         display: table;

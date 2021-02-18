@@ -209,7 +209,7 @@ document.addEventListener('DOMContentLoaded', function domLoaded() {
             '#sea_dusk',
             16,
             {
-                opacity: 0.5,
+                opacity: 0.4,
                 delay: 50
             }
         )

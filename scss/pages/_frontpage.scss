@@ -5,6 +5,7 @@ body {
 
   h1 {
     @include style-font(h1);
+    margin: 10px 0px 20px 0px;
   }
 
   h2 {
@@ -19,11 +20,6 @@ body {
   span,
   figcaption {
     @include style-font(p);
-  }
-
-  a {
-    color: $white;
-    font-size: 0.7em;
   }
 
   pre {
@@ -49,15 +45,7 @@ body {
       flex-wrap: wrap;
 
       figure.animation-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        flex: 0 0 30%;
         border-radius: 7px;
-        min-width: 200px;
-        height: 200px;
-        margin: 10px;
         overflow: hidden;
         position: relative;
         transition: all 0.3s ease;
@@ -96,6 +84,21 @@ body {
           bottom: -40px;
         }
       }
+
+      .box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        flex: 1 1 30%;
+        min-width: 250px;
+        height: 200px;
+        margin: 10px;
+      }
+
+      span.credits {
+        font-size: 0.7em;
+      }
     }
 
     aside#sidebar.sidebar {
@@ -114,7 +117,11 @@ body {
 
       h1 {
         color: $white;
-        margin: 10px 0px 20px 0px;
+      }
+
+      a {
+        color: $white;
+        font-size: 0.7em;
       }
 
       &.open::after {
