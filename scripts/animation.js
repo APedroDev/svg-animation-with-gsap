@@ -127,6 +127,7 @@ document.addEventListener('DOMContentLoaded', function domLoaded() {
 
         let umbrellaArmTimeline = gsap.timeline({repeat: -1, repeatDelay: 2});
         let skyTimeline = gsap.timeline({repeat: -1});
+        let duskTimeline = gsap.timeline({repeat: -1});
 
         gsap.set(
             '#sea_waves',
@@ -147,6 +148,35 @@ document.addEventListener('DOMContentLoaded', function domLoaded() {
             '#sea_sun',
             {
                 x: -1100
+            }
+        );
+
+        gsap.set(
+            '#sea_dusk',
+            {
+                opacity: 0,
+                fill: '#000000'
+            }
+        )
+
+        gsap.to(
+            '#sea_sun',
+            80,
+            {
+                x:1400,
+                ease: Linear,
+                repeat: -1
+            }
+        );
+
+        gsap.to(
+            '#sea_waves',
+            1.5,
+            {
+                x:-250,
+                repeat: -1,
+                yoyo: true,
+                ease: Power2.easeIn
             }
         );
 
@@ -174,41 +204,21 @@ document.addEventListener('DOMContentLoaded', function domLoaded() {
                 delay: 4
             }
         );
-        
-        gsap.to(
-            '#sea_sun',
-            80,
-            {
-                x:1400,
-                ease: Linear,
-                repeat: -1
-            }
-        );
 
-        gsap.to(
-            '#sea_waves',
-            1.5,
-            {
-                x:-250,
-                repeat: -1,
-                yoyo: true,
-                ease: Power2.easeIn
-            }
-        );
-
-        gsap.fromTo(
+        duskTimeline.to(
             '#sea_dusk',
             16,
             {
-                opacity: 0,
-                fill: '#000000'
-            },
-            {
                 opacity: 0.5,
-                repeat: -1,
-                delay: 50,
-                yoyo: true,
-                repeatDelay: 50
+                delay: 50
+            }
+        )
+        .to(
+            '#sea_dusk',
+            10,
+            {
+                opacity: 0,
+                delay: 4
             }
         );
 
