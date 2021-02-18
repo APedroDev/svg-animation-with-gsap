@@ -1,7 +1,7 @@
 // Style some font and color properties depending on tag
 @mixin style-font($tag) {
   //Global properties
-  color: $orange;
+  color: $blue;
 
   @if $tag == h1 {
     //h1 properties
@@ -17,7 +17,7 @@
     font-weight: 500;
   } @else {
     //Other cases
-    font-size: 1.2em;
+    font-size: 1em;
   }
 }
 
@@ -26,5 +26,7 @@
     padding: 20px;
   } @else if $size == "normal" {
     padding: 40px;
+  } @else if $size == "xsmall" {
+    padding: 15px;
   }
 }

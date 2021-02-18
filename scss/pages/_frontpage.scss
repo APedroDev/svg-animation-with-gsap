@@ -1,11 +1,11 @@
 body {
-  background: $blue;
   font-family: "Work Sans", sans-serif;
   font-size: 1rem;
   @include padding("normal");
 
   h1 {
     @include style-font(h1);
+    margin: 10px 0px 20px 0px;
   }
 
   h2 {
@@ -22,6 +22,15 @@ body {
     @include style-font(p);
   }
 
+  pre {
+    font-family: "Source Code Pro", monospace;
+    font-size: 13px;
+    white-space: pre-wrap;
+    line-height: 1.4em;
+    background-color: darken($color: $blue, $amount: 2);
+    @include padding("xsmall");
+  }
+
   div#main-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -35,18 +44,32 @@ body {
       justify-content: space-around;
       flex-wrap: wrap;
 
-      figure {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        flex: 0 0 30%;
+      figure.animation-container {
         border-radius: 7px;
-        background: lighten($color: $blue, $amount: 5);
-        min-width: 200px;
-        height: 200px;
-        margin: 10px;
         overflow: hidden;
+        position: relative;
+        transition: all 0.3s ease;
+
+        &:hover {
+          box-shadow: 0px 0px 30px #dbdbdb;
+
+          button {
+            bottom: 10px;
+          }
+        }
+
+        div.code-display {
+          position: absolute;
+          @include padding("small");
+          overflow: scroll;
+          right: 100%;
+          top: 0;
+          transition: all 0.5s ease;
+          background-color: $blue;
+          width: 100%;
+          height: 100%;
+          color: $white;
+        }
 
         img {
           height: 102%;
@@ -54,9 +77,69 @@ body {
           object-position: center;
         }
 
-        figcaption {
-          margin-top: 20px;
+        @import "../components/button";
+
+        button {
+          position: absolute;
+          bottom: -40px;
         }
+      }
+
+      .box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        flex: 1 1 30%;
+        min-width: 250px;
+        height: 200px;
+        margin: 10px;
+      }
+
+      span.credits {
+        font-size: 0.7em;
+      }
+    }
+
+    aside#sidebar.sidebar {
+      $width: 47%;
+
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100vh;
+      max-width: $width;
+      background-color: $blue;
+      overflow: scroll;
+      color: $white;
+      z-index: 999;
+      transition: all 0.2s ease;
+
+      h1 {
+        color: $white;
+      }
+
+      a {
+        color: $white;
+        font-size: 0.7em;
+      }
+
+      &.open::after {
+        content: "";
+        display: table;
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: -1;
+        background: rgba($color: $blue, $alpha: 0.7);
+      }
+
+      @include padding("small");
+
+      &.close {
+        right: -$width;
       }
     }
   }

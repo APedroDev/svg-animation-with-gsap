@@ -1,8 +1,5 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap");
 * {
   box-sizing: border-box; }
 
@@ -130,28 +127,39 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+button {
+  outline: none;
+  border: none; }
+
 body {
-  background: #314e52;
   font-family: "Work Sans", sans-serif;
   font-size: 1rem;
   padding: 40px; }
   body h1 {
-    color: #f2a154;
+    color: #314e52;
     font-size: 2.5em;
-    font-weight: 700; }
+    font-weight: 700;
+    margin: 10px 0px 20px 0px; }
   body h2 {
-    color: #f2a154;
+    color: #314e52;
     font-size: 2em;
     font-weight: 700; }
   body h3 {
-    color: #f2a154;
+    color: #314e52;
     font-size: 1.5em;
     font-weight: 500; }
   body p,
   body span,
   body figcaption {
-    color: #f2a154;
-    font-size: 1.2em; }
+    color: #314e52;
+    font-size: 1em; }
+  body pre {
+    font-family: "Source Code Pro", monospace;
+    font-size: 13px;
+    white-space: pre-wrap;
+    line-height: 1.4em;
+    background-color: #2d484c;
+    padding: 15px; }
   body div#main-container {
     max-width: 1200px;
     margin: 0 auto; }
@@ -161,23 +169,80 @@ body {
       display: flex;
       justify-content: space-around;
       flex-wrap: wrap; }
-      body div#main-container main#main figure {
+      body div#main-container main#main figure.animation-container {
+        border-radius: 7px;
+        overflow: hidden;
+        position: relative;
+        transition: all 0.3s ease; }
+        body div#main-container main#main figure.animation-container:hover {
+          box-shadow: 0px 0px 30px #dbdbdb; }
+          body div#main-container main#main figure.animation-container:hover button {
+            bottom: 10px; }
+        body div#main-container main#main figure.animation-container div.code-display {
+          position: absolute;
+          padding: 20px;
+          overflow: scroll;
+          right: 100%;
+          top: 0;
+          transition: all 0.5s ease;
+          background-color: #314e52;
+          width: 100%;
+          height: 100%;
+          color: #ffffff; }
+        body div#main-container main#main figure.animation-container img {
+          height: 102%;
+          object-fit: cover;
+          object-position: center; }
+        body div#main-container main#main figure.animation-container button {
+          background-color: #314e52;
+          padding: 15px;
+          color: #ffffff;
+          transition: all 0.3s ease;
+          border-radius: 7px;
+          cursor: pointer;
+          font-size: inherit; }
+        body div#main-container main#main figure.animation-container button {
+          position: absolute;
+          bottom: -40px; }
+      body div#main-container main#main .box {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        flex: 0 0 30%;
-        border-radius: 7px;
-        background: #3b5d62;
-        min-width: 200px;
+        flex: 1 1 30%;
+        min-width: 250px;
         height: 200px;
-        margin: 10px;
-        overflow: hidden; }
-        body div#main-container main#main figure img {
-          height: 102%;
-          object-fit: cover;
-          object-position: center; }
-        body div#main-container main#main figure figcaption {
-          margin-top: 20px; }
+        margin: 10px; }
+      body div#main-container main#main span.credits {
+        font-size: 0.7em; }
+    body div#main-container aside#sidebar.sidebar {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100vh;
+      max-width: 47%;
+      background-color: #314e52;
+      overflow: scroll;
+      color: #ffffff;
+      z-index: 999;
+      transition: all 0.2s ease;
+      padding: 20px; }
+      body div#main-container aside#sidebar.sidebar h1 {
+        color: #ffffff; }
+      body div#main-container aside#sidebar.sidebar a {
+        color: #ffffff;
+        font-size: 0.7em; }
+      body div#main-container aside#sidebar.sidebar.open::after {
+        content: "";
+        display: table;
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: -1;
+        background: rgba(49, 78, 82, 0.7); }
+      body div#main-container aside#sidebar.sidebar.close {
+        right: -47%; }
 
 /*# sourceMappingURL=style.css.map */
