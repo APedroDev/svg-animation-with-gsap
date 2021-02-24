@@ -1,0 +1,15 @@
+footer#footer {
+  font-size: 0.8em;
+  text-align: center;
+
+  @include padding("small");
+
+  span {
+    a {
+      padding: 5px;
+      border-radius: 5px;
+      background: linear-gradient(#0400ff40, #7baaff94);
+      color: $white;
+    }
+  }
+}

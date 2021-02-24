@@ -244,5 +244,14 @@ body {
         background: rgba(49, 78, 82, 0.7); }
       body div#main-container aside#sidebar.sidebar.close {
         right: -47%; }
+    body div#main-container footer#footer {
+      font-size: 0.8em;
+      text-align: center;
+      padding: 20px; }
+      body div#main-container footer#footer span a {
+        padding: 5px;
+        border-radius: 5px;
+        background: linear-gradient(#0400ff40, #7baaff94);
+        color: #ffffff; }
 
 /*# sourceMappingURL=style.css.map */
