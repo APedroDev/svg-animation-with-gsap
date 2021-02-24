@@ -50,13 +50,13 @@ document.addEventListener('DOMContentLoaded', function domLoaded() {
             labAirBalloonSvg,
             12,
             {
-                x: -950,
+                x: -2000,
                 rotation: 20
             },
             {
-                x: 1500,
+                x: 2000,
                 rotation: -20,
-                ease: Power4.easeIn,
+                ease: Power3.easeIn,
                 repeat: -1
             }
         );
