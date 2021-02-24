@@ -3,3 +3,6 @@ node_modules/
 
 #Removing Sass Cache
 .sass-cache/
+
+#Removing all .ai files
+*.ai
