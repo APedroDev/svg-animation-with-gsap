@@ -4,7 +4,36 @@ import {
     SIDEBAR_H1NODE
 } from '../../constants.js';
 
-function setSidebar(status, codeText, title) {
+import animateLab from '../../animations/airBalloonAnimation.js';
+import animateSea from '../../animations/seaAnimation.js';
+import animateSpace from '../../animations/spaceAnimation.js';
+
+export function fillSidebarText(parentClassList) {
+
+    let parentClassListArr = Array.from(parentClassList);
+
+    switch (parentClassListArr[1]) {
+        case ('lab'):
+            return {
+                func: animateLab,
+                title: 'Let\'s fly away'
+            };
+        case ('sea'):
+            return {
+                func: animateSea,
+                title: 'Sandy chills'
+            };
+        case ('space'):
+            return {
+                func: animateSpace,
+                title: 'Goin\' round'
+            };
+        default:
+            return 'function() {}';
+    }
+}
+
+export function setSidebar(status, codeText, title) {
 
     let currentStatus = status || 'off';
     let currentCodeText = codeText || 'Please press one of the "Show Code" buttons!';
@@ -30,5 +59,3 @@ function setSidebar(status, codeText, title) {
 
     return toggleLogic();
 }
-
-export default setSidebar;
