@@ -4,7 +4,9 @@ import {gsap} from "../../node_modules/gsap/index.js";
 import {
     SPACE_EARTH,
     SPACE_STARS,
-    SPACE_MOON
+    SPACE_MOON,
+    SPACE_SAT,
+    SPACE_WAVES
 } from '../constants.js';
 
 export default function animateSpace() {
@@ -27,6 +29,30 @@ export default function animateSpace() {
             repeat: -1,
             transformOrigin: '50%',
             ease: Linear.easeNone
+        }
+    );
+
+    TweenMax.to(
+        SPACE_SAT,
+        15,
+        {
+            rotation: 360,
+            repeat: -1,
+            transformOrigin: '-40px 30px',
+            ease: Linear.easeNone
+        }
+    );
+
+    TweenMax.fromTo(
+        SPACE_WAVES,
+        0.5,
+        {
+            opacity:1
+        },
+        {
+            opacity: 0,
+            repeat: -1,
+            repeatDelay: 14.5
         }
     );
 }

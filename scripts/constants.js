@@ -13,3 +13,5 @@ export const LAB_WIND = document.querySelector('#lab_wind');
 export const SPACE_STARS = document.querySelector('#space_stars');
 export const SPACE_EARTH = document.querySelector('#space_earth');
 export const SPACE_MOON = document.querySelector('#space_moon');
+export const SPACE_SAT = document.querySelector('#space_satellite');
+export const SPACE_WAVES = document.querySelector('#space_waves');
